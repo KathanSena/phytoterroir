@@ -1,0 +1,11 @@
+{
+  "records_aggregated": 5,
+  "h3_resolution": 3,
+  "aggregate_cells": 4,
+  "records_with_coordinate_uncertainty": 5,
+  "coordinate_uncertainty_metadata_share": 1.0,
+  "privacy_note": "H3 aggregation reduces coordinate precision but is not differential privacy and does not guarantee anonymity.",
+  "species": "Rhodiola rosea",
+  "source": "synthetic demo fixture",
+  "model": "occurrence evidence only; no habitat, chemistry or harvest prediction"
+}

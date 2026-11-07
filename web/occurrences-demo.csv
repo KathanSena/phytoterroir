@@ -1,0 +1,15 @@
+species,lat,lon,year,basisOfRecord,gbifID,datasetKey,countryCode,coordinateUncertaintyInMeters
+Rhodiola rosea,46.85,9.53,2022,HUMAN_OBSERVATION,demo-r1,demo,CH,5000
+Rhodiola rosea,47.05,10.20,2021,HUMAN_OBSERVATION,demo-r2,demo,AT,5000
+Rhodiola rosea,46.20,10.85,2020,HUMAN_OBSERVATION,demo-r3,demo,IT,5000
+Rhodiola rosea,47.30,11.40,2019,HUMAN_OBSERVATION,demo-r4,demo,AT,5000
+Rhodiola rosea,46.60,8.10,2023,HUMAN_OBSERVATION,demo-r5,demo,CH,5000
+Withania somnifera,24.60,73.70,2023,HUMAN_OBSERVATION,demo-w1,demo,IN,8000
+Withania somnifera,25.20,75.10,2022,HUMAN_OBSERVATION,demo-w2,demo,IN,8000
+Withania somnifera,23.80,72.50,2020,HUMAN_OBSERVATION,demo-w3,demo,IN,8000
+Nardostachys jatamansi,30.10,79.20,2022,HUMAN_OBSERVATION,demo-n1,demo,IN,8000
+Nardostachys jatamansi,30.50,80.10,2021,HUMAN_OBSERVATION,demo-n2,demo,IN,8000
+Nardostachys jatamansi,29.90,78.60,2020,HUMAN_OBSERVATION,demo-n3,demo,IN,8000
+Hydrastis canadensis,38.50,-81.00,2023,HUMAN_OBSERVATION,demo-h1,demo,US,8000
+Hydrastis canadensis,39.10,-82.20,2022,HUMAN_OBSERVATION,demo-h2,demo,US,8000
+Hydrastis canadensis,37.90,-80.20,2020,HUMAN_OBSERVATION,demo-h3,demo,US,8000

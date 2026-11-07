@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183a2f"><meta name="description" content="Community governed medicinal plant occurrence intelligence with privacy-aware H3 aggregation.">
+  <title>PhytoTerroir | Field intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#top"><span class="brand-mark">✳</span><span>Phyto<span class="brand-light">Terroir</span><small>COMMUNITY PLANT INTELLIGENCE</small></span></a>
+      <div class="side-section"><div class="section-kicker">01 / EXPLORE</div>
+        <label for="species">Target species</label>
+        <select id="species"><option>Rhodiola rosea</option><option>Withania somnifera</option><option>Nardostachys jatamansi</option><option>Hydrastis canadensis</option></select>
+        <label for="source">Occurrence data</label>
+        <select id="source"><option value="demo">Synthetic demo</option><option value="live">Live GBIF</option></select>
+        <label for="resolution">Map aggregation <span id="resolution-value">H3 resolution 3</span></label>
+        <input id="resolution" type="range" min="2" max="5" step="1" value="3">
+        <label for="limit">Live record cap <span id="limit-value">500</span></label>
+        <input id="limit" type="range" min="100" max="1000" step="100" value="500" disabled>
+      </div>
+      <div class="side-note"><div class="section-kicker">LOCATION PROTECTION</div><p>The map receives H3 aggregate polygons only. Live coordinates are grouped on the server before results reach this page.</p><p class="note-small">Aggregation reduces precision but cannot guarantee anonymity. Sparse cells and other datasets can expose locations.</p></div>
+      <div class="side-bottom"><span class="status-dot"></span><span id="status-text">Synthetic records loaded</span></div>
+    </aside>
+    <main id="top" class="main">
+      <header class="hero"><div class="hero-copy"><div class="eyebrow">COMMUNITY GOVERNED PLANT INTELLIGENCE</div><h1>PhytoTerroir</h1><p>Explore medicinal plant occurrence evidence, test harvest trade-offs, and keep sensitive locations aggregated from the start.</p></div><div class="hero-badge">EVIDENCE FIRST <i>·</i> FIELD SAFE</div></header>
+      <div id="notice" class="notice hidden" role="status"></div>
+      <section class="metrics" aria-label="Occurrence summary">
+        <article class="metric-card"><div class="metric-label">RECORDS IN THIS VIEW</div><div id="record-count" class="metric-value">—</div><div id="source-label" class="metric-foot">Loading occurrence evidence</div></article>
+        <article class="metric-card"><div class="metric-label">H3 CELLS SHOWN</div><div id="cell-count" class="metric-value">—</div><div id="cell-foot" class="metric-foot">Aggregate cells only</div></article>
+        <article class="metric-card"><div class="metric-label">COORDINATE QUALITY METADATA</div><div id="quality-value" class="metric-value">—</div><div class="metric-foot">Records with stated uncertainty</div></article>
+      </section>
+      <section class="evidence-section">
+        <div class="section-heading"><div><div class="section-kicker">01 / OCCURRENCE EVIDENCE</div><h2>Where records cluster</h2></div><span class="live-pill"><span class="status-dot"></span><span id="source-pill">DEMO DATA</span></span></div>
+        <div class="map-grid"><div class="map-frame"><div id="map" aria-label="Map of aggregate H3 cells"></div><div class="map-legend"><span class="legend-swatch"></span>More records in cell <span class="legend-end">Fewer records</span></div></div>
+          <aside class="evidence-panel"><div class="eyebrow-dark">RECORD SUMMARY</div><h3 id="species-title">Rhodiola rosea</h3><p id="species-region">Alpine and subalpine habitats</p><div class="summary-rule"></div><div class="summary-line"><span>Record years</span><strong id="year-range">—</strong></div><div class="summary-line"><span>H3 resolution</span><strong id="summary-resolution">3</strong></div><h4>Densest reported cells</h4><ol id="top-cells" class="cell-list"></ol><div class="evidence-callout"><b>Read this as sampling evidence.</b><br>Dense cells may reflect observation effort, access and digitization. They do not prove abundance, habitat quality or safe harvest capacity.</div></aside>
+        </div><p class="map-caption">Each polygon represents an H3 aggregate. No individual occurrence points are drawn.</p>
+      </section>
+      <section class="lab-section">
+        <div class="section-kicker">02 / DECISION LAB</div><div class="tabs" role="tablist"><button class="tab active" data-tab="harvest" role="tab">Harvest impact explorer</button><button class="tab" data-tab="chemistry" role="tab">Chemistry evidence</button><button class="tab" data-tab="governance" role="tab">Data governance</button></div>
+        <div id="panel-harvest" class="tab-panel active" role="tabpanel"><div class="panel-intro"><div><h2>Explore a hypothetical harvest pressure</h2><p>Adjust assumptions to see how harvest part, removal pressure and rainfall change an illustrative recovery curve.</p></div><span class="assumption-tag">SCENARIO ONLY</span></div><div class="scenario-grid"><div class="scenario-controls"><label for="part">Harvested plant part</label><select id="part"><option>Root / rhizome</option><option>Bark</option><option>Flower / fruit</option><option>Leaf</option></select><div id="part-impact" class="impact-label">Very high assumed impact</div><p id="part-copy" class="small-copy">Removing underground organs can kill the individual or delay recovery.</p><label for="pressure">Annual removal pressure <span id="pressure-value">5%</span></label><input id="pressure" type="range" min="0" max="20" value="5"><label for="rainfall">Rainfall scenario <span id="rainfall-value">Baseline</span></label><input id="rainfall" type="range" min="-30" max="30" step="15" value="0"></div><div class="chart-wrap"><div class="chart-title">ILLUSTRATIVE POPULATION INDEX <span>Year 0 = 100</span></div><svg id="recovery-chart" viewBox="0 0 720 300" role="img" aria-label="Illustrative ten year population index chart"></svg><p id="scenario-caption" class="chart-caption">Placeholder recovery rates · not a safe yield estimate</p></div></div><div class="warning-callout"><b>Do not use this curve to set a quota.</b> Rates are placeholders. Local demographic studies and community authorization are required before any management decision.</div></div>
+        <div id="panel-chemistry" class="tab-panel" role="tabpanel" hidden><div class="panel-intro"><div><h2>Chemistry is a research question</h2><p id="compound-description">Candidate compounds are shown to identify research needs, not to predict potency.</p></div><span class="assumption-tag">NO ASSAY DATA</span></div><div class="chemistry-cards"><article><span class="card-index">A / CANDIDATE</span><h3 id="compound-name">Salidroside and rosavins</h3><p>Candidate compound family to investigate with traceable, tissue-specific chemical assays.</p></article><article><span class="card-index">B / EVIDENCE GAP</span><h3>No validated assay set</h3><p>This prototype contains no assay-linked training data and does not estimate chemical concentration.</p></article><article><span class="card-index">C / NEXT STUDY</span><h3>Match assays to place</h3><p>Pair standardized assays with measured environment and validate on independent sites.</p></article></div></div>
+        <div id="panel-governance" class="tab-panel" role="tabpanel" hidden><div class="panel-intro"><div><h2>Location data carries real risk</h2><p>Coordinates become H3 cells on the server. The browser receives aggregate polygons and counts, never the raw records in live mode.</p></div><span class="assumption-tag">GOVERNANCE FIRST</span></div><div class="governance-grid"><div><h3>Safeguards in this prototype</h3><ul><li>Live coordinates aggregate server-side before display.</li><li>Map has no individual occurrence markers.</li><li>Demo mode uses synthetic locations.</li><li>GBIF licensing and attribution vary by source record.</li></ul></div><div class="warning-callout"><b>H3 is not differential privacy.</b> Sparse cells, external datasets or a high-resolution grid can still reveal sensitive locations. Get consent and establish community control, access restrictions and a threat model before handling protected data.</div></div></div>
+      </section>
+      <footer class="footer"><span id="footer-source">Synthetic fixture bundled with this prototype</span><span>Exploratory evidence · not a conservation assessment or harvest recommendation</span></footer>
+    </main>
+  </div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script type="module" src="/app.js"></script>
+</body></html>

@@ -1,0 +1,194 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "species": "Rhodiola rosea",
+    "source": "synthetic demo fixture",
+    "note": "H3 aggregation reduces coordinate precision but is not differential privacy and does not guarantee anonymity."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.569415354535854,
+              47.57107897586913
+            ],
+            [
+              8.645314229897533,
+              46.97706843961054
+            ],
+            [
+              9.463672237549419,
+              46.7557038219419
+            ],
+            [
+              10.217491094939925,
+              47.12771701677269
+            ],
+            [
+              10.153180355572067,
+              47.7240948318606
+            ],
+            [
+              9.323357116056014,
+              47.94613977597019
+            ],
+            [
+              8.569415354535854,
+              47.57107897586913
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "h3_cell": "831f8efffffffff",
+        "record_count": 1,
+        "record_year_min": 2022,
+        "record_year_max": 2022,
+        "records_with_coordinate_uncertainty": 1,
+        "cell_area_km2": 11935.4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.463672237549419,
+              46.7557038219419
+            ],
+            [
+              9.532250123457684,
+              46.15397080087272
+            ],
+            [
+              10.343212804239645,
+              45.92192778359744
+            ],
+            [
+              11.096452531828488,
+              46.290866240440415
+            ],
+            [
+              11.039404366150022,
+              46.894874154158224
+            ],
+            [
+              10.217491094939925,
+              47.12771701677269
+            ],
+            [
+              9.463672237549419,
+              46.7557038219419
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "h3_cell": "831f8afffffffff",
+        "record_count": 2,
+        "record_year_min": 2020,
+        "record_year_max": 2021,
+        "records_with_coordinate_uncertainty": 2,
+        "cell_area_km2": 12188.78
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              10.153180355572067,
+              47.7240948318606
+            ],
+            [
+              10.217491094939925,
+              47.12771701677269
+            ],
+            [
+              11.039404366150022,
+              46.894874154158224
+            ],
+            [
+              11.80790970459165,
+              47.257480545419014
+            ],
+            [
+              11.75556350344947,
+              47.855946590652614
+            ],
+            [
+              10.922653697845128,
+              48.089768679389124
+            ],
+            [
+              10.153180355572067,
+              47.7240948318606
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "h3_cell": "831f88fffffffff",
+        "record_count": 1,
+        "record_year_min": 2019,
+        "record_year_max": 2019,
+        "records_with_coordinate_uncertainty": 1,
+        "cell_area_km2": 12047.66
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              7.907013832241965,
+              46.5961562455816
+            ],
+            [
+              7.986740374168108,
+              45.9969748769621
+            ],
+            [
+              8.793724920908769,
+              45.776108929067384
+            ],
+            [
+              9.532250123457684,
+              46.15397080087272
+            ],
+            [
+              9.463672237549419,
+              46.7557038219419
+            ],
+            [
+              8.645314229897533,
+              46.97706843961054
+            ],
+            [
+              7.907013832241965,
+              46.5961562455816
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "h3_cell": "831f9dfffffffff",
+        "record_count": 1,
+        "record_year_min": 2023,
+        "record_year_max": 2023,
+        "records_with_coordinate_uncertainty": 1,
+        "cell_area_km2": 12067.65
+      }
+    }
+  ]
+}

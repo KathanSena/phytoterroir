@@ -1,0 +1,6 @@
+streamlit>=1.38
+pandas>=2.2
+numpy>=1.26
+pydeck>=0.9
+requests>=2.32
+h3>=4.1
