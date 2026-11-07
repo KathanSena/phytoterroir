@@ -85,7 +85,7 @@ function renderCells(features){
   $("top-cells").innerHTML=sorted.map(f=>`<li><b>${escapeHTML(f.properties.h3_cell)}</b><br>${f.properties.record_count} record${f.properties.record_count===1?"":"s"} · ${f.properties.year_min??"?"}–${f.properties.year_max??"?"}</li>`).join("")||"<li>No aggregate cells</li>";
 }
 function renderMap(features){
-  if(!state.map){state.map=L.map("map",{scrollWheelZoom:false,zoomControl:true}).setView([35,10],2);L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",{attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',maxZoom:19,subdomains:"abcd"}).addTo(state.map);}
+  if(!state.map){state.map=L.map("map",{scrollWheelZoom:false,zoomControl:true}).setView([35,10],2);L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',maxZoom:19}).addTo(state.map);}
   if(state.layer)state.map.removeLayer(state.layer);
   const max=Math.max(1,...features.map(f=>f.properties.record_count));
   const layer=L.featureGroup();
